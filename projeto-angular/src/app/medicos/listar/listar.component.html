@@ -1,0 +1,13 @@
+<mat-toolbar>listar medicos
+    <button mat-icon-button routerLink="novo">
+        <mat-icon>add</mat-icon>
+    </button>
+</mat-toolbar>
+
+<table>
+    <tr *ngFor="let medico of medicos">
+        <td>{{medico.nome}}</td>
+        <td>{{medico.email}}</td>
+        <td>{{medico.crm}}</td>
+    </tr>
+</table>

@@ -1,0 +1,26 @@
+<mat-toolbar>Editar medicos
+    <button mat-icon-button routerLink="">
+            <mat-icon>backspace</mat-icon>
+        </button>
+</mat-toolbar>
+<br>
+<form (ngSubmit)="enviar()">
+    <mat-form-field>
+        <input type="text" name="nome" required placeholder="Nome" matInput [(ngModel)]="medico.nome">
+        <mat-error *ngIf="hasError('nome', 'required')">Informe o nome</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input type="text" name="email" required placeholder="Email" matInput [(ngModel)]="medico.email">
+        <mat-error *ngIf="hasError('email', 'required')">Informe o email</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input type="text" name="crm" required placeholder="CRM" matInput [(ngModel)]="medico.crm">
+        <mat-error *ngIf="hasError('crm', 'required')">Informe o CRM</mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" type="submit">
+        <mat-icon>save</mat-icon>
+    </button>
+</form>
