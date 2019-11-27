@@ -3,16 +3,27 @@ import { CommonModule } from '@angular/common'
 import { RouterModule, Routes } from '@angular/router';
 import { ListarComponent } from './listar/listar.component';
 import { EditarComponent } from './editar/editar.component';
+import { MedicoResolve } from './servico/medico.resolve';
 
 
 const routes: Routes = [
   {
-    path: '', 
-    component: ListarComponent
-  }, {
+    component: ListarComponent,
+    path: '',
+  },
+  {
+    component: EditarComponent,
     path: 'novo',
-    component: EditarComponent
-
+    resolve: {
+      medico: MedicoResolve
+    }
+  },
+  {
+    component: EditarComponent,
+    path: 'editar/:id',
+    resolve: {
+      medico: MedicoResolve
+    }
   }
 ];
 

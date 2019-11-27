@@ -1,26 +1,60 @@
-<mat-toolbar>Editar medicos
-    <button mat-icon-button routerLink="">
-            <mat-icon>backspace</mat-icon>
+<mat-toolbar>
+    <mat-toolbar-row>
+      <button mat-icon-button matTooltip="Voltar" (click)="voltar()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>{{ title }}
+    </mat-toolbar-row>
+  </mat-toolbar>
+  
+  <div class="edit">
+    <form #form="ngForm" class="mat-elevation-z3" (ngSubmit)="enviar(form)">
+  
+      <mat-form-field>
+        <input type="text"
+               matInput
+               required
+               placeholder="Nome"
+               name="nome"
+               #nome="ngModel"
+               [(ngModel)]="medico.nome">
+  
+        <mat-error *ngIf="nome.invalid && form.submitted">
+          Nome é obrigatório
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input type="text"
+               matInput
+               required
+               placeholder="Email"
+               #email="ngModel"
+               name="email" [(ngModel)]="medico.email">
+  
+        <mat-error *ngIf="email.invalid && form.submitted">
+          Email é obrigatório
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input type="text"
+               matInput
+               required
+               placeholder="CRM"
+               name="crm"
+               #crm="ngModel"
+               [(ngModel)]="medico.crm">
+        <mat-error *ngIf="crm.invalid && form.submitted">
+          CRM é obrigatório
+        </mat-error>
+      </mat-form-field>
+  
+  
+      <div class="action">
+        <button mat-raised-button type="submit" color="primary">
+          Enviar
         </button>
-</mat-toolbar>
-<br>
-<form (ngSubmit)="enviar()">
-    <mat-form-field>
-        <input type="text" name="nome" required placeholder="Nome" matInput [(ngModel)]="medico.nome">
-        <mat-error *ngIf="hasError('nome', 'required')">Informe o nome</mat-error>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-        <input type="text" name="email" required placeholder="Email" matInput [(ngModel)]="medico.email">
-        <mat-error *ngIf="hasError('email', 'required')">Informe o email</mat-error>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-        <input type="text" name="crm" required placeholder="CRM" matInput [(ngModel)]="medico.crm">
-        <mat-error *ngIf="hasError('crm', 'required')">Informe o CRM</mat-error>
-    </mat-form-field>
-    <br>
-    <button mat-raised-button color="primary" type="submit">
-        <mat-icon>save</mat-icon>
-    </button>
-</form>
+      </div>
+  
+    </form>
+  </div>

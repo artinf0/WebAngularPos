@@ -37,4 +37,12 @@ export abstract class BaseApi<T>{
         .pipe(map(value=>value as T));
     }
 
+    salvar(body?: any): Observable<T> {
+        const {id, ...bodyRequest} = body;
+        if (id) {
+          return this.atualizar(id, bodyRequest);
+        }
+        return this.criar(body);
+      }
+
 }
