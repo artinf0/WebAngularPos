@@ -7,10 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { EditarComponent } from '../medicos//editar/editar.component';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
+import { MudaCorDirective } from '../shared/muda-cor.directive';
 
 @NgModule({
-  declarations: [ListarComponent, EditarComponent],
+  declarations: [ListarComponent, EditarComponent,MudaCorDirective],
   imports: [
     CommonModule,
     FormsModule,
