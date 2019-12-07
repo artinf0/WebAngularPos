@@ -12,6 +12,13 @@
   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa suscipit et at quaerat doloremque voluptatibus sequi, inventore accusamus. Molestias laboriosam, eius aut placeat quis quibusdam reprehenderit atque magni assumenda ipsa.  
 </div>
 
+<div>
+    <p>Validação número par</p>  
+    <input type="number" [(ngModel)]="valor" >
+    <br>
+    <b>{{ valor | listaNumeroPar}}</b>
+</div>
+
   <div class="content">
     <table mat-table [dataSource]="medicos" class="mat-elevation-z8">
   

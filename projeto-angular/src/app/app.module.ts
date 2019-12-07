@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MedicosModule } from './medicos/medicos.module';
 import { MedicoRoutingModule } from './medicos/medico-routing.module';
 
+
 @NgModule({
   declarations: [
     AppComponent

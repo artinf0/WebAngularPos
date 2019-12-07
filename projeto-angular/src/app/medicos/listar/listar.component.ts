@@ -12,6 +12,8 @@ export class ListarComponent implements OnInit {
   public medicos: medico[];
   colunas: string[] = ['nome', 'email', 'crm', 'acoes'];
 
+  valor : number;
+
   constructor(private medicoService: MedicoService,
               private router: Router) { }
 

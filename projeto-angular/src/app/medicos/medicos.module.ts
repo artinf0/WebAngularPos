@@ -8,9 +8,10 @@ import { EditarComponent } from '../medicos//editar/editar.component';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MudaCorDirective } from '../shared/muda-cor.directive';
+import { ListaNumeroParPipe } from '../shared/lista-numero-par.pipe';
 
 @NgModule({
-  declarations: [ListarComponent, EditarComponent,MudaCorDirective],
+  declarations: [ListarComponent, EditarComponent,MudaCorDirective,ListaNumeroParPipe],
   imports: [
     CommonModule,
     FormsModule,
